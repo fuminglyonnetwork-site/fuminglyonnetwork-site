@@ -23,7 +23,7 @@ function NavBar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <a href="#top" className="font-bold tracking-tight text-xl">
           <span className="text-gray-900">Fuming</span>
-          <span className="text-red-600">Lyon</span>
+          <span className="text-green-600">Lyon</span>
           <span className="text-gray-900"> Network</span>
         </a>
         <nav className="hidden md:flex gap-8 text-sm">
@@ -61,30 +61,51 @@ function Hero() {
     <div className="relative overflow-hidden bg-gradient-to-b from-red-50 to-white" id="top">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid items-center gap-10 md:grid-cols-2">
+          {/* Left side: Text */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
               Stories that enlighten, educate, <span className="text-red-600">and empower.</span>
             </h1>
             <p className="mt-6 text-gray-600 leading-relaxed">
-              FumingLyon Network is a film & media brand creating Nollywood‑style movies, comedy skits, and behind‑the‑scenes content.
+              FumingLyon Network is a film & media brand creating Nollywood-style movies, comedy skits, 
+              and behind-the-scenes content.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#films" className="rounded-full bg-gray-900 px-5 py-3 text-white hover:bg-black">Watch our work</a>
-              <a href="#contact" className="rounded-full border border-gray-300 px-5 py-3 text-gray-800 hover:border-gray-400">Book the team</a>
+              <a 
+                href="#films" 
+                className="rounded-full bg-gray-900 px-5 py-3 text-white hover:bg-black"
+              >
+                Watch our work
+              </a>
+              <a 
+                href="#contact" 
+                className="rounded-full border border-gray-300 px-5 py-3 text-gray-800 hover:border-gray-400"
+              >
+                Book the team
+              </a>
             </div>
-            <p className="mt-4 text-sm text-gray-500">Now streaming: <span className="font-medium">“Let the Poor Breathe”</span> on YouTube.</p>
+            <p className="mt-4 text-sm text-gray-500">
+              Now streaming: <span className="font-medium">“Let the Poor Breathe”</span> on YouTube.
+            </p>
           </div>
-          <div>
+
+          {/* Right side: Logo + Trailer */}
+          <div className="text-center">
+            <img 
+              src="/fuminglyon_logo.jpeg"   // 👈 Put your logo inside /public/logo.png
+              alt="FumingLyon Network Logo"
+              className="mx-auto mb-4 h-20 w-auto"
+            />
             <div className="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow-sm">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/1t2rhge364Q"   // 👈 embed format
                 title="Featured Film"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
-            <p className="mt-2 text-xs text-gray-500">Replace with your real trailer link.</p>
+            <p className="mt-2 text-xs text-gray-500">Now streaming on YouTube.</p>
           </div>
         </div>
       </div>
@@ -116,9 +137,24 @@ function About() {
 }
 
 const sampleFilms = [
-  { title: "Let the Poor Breathe", tag: "Drama · 2025", thumb: "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1400&auto=format&fit=crop", link: "#" },
-  { title: "Not My Valentine", tag: "RomCom · 2025", thumb: "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1400&auto=format&fit=crop", link: "#" },
-  { title: "Melody of Redemption", tag: "Musical · 2026", thumb: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1400&auto=format&fit=crop", link: "#" },
+  { 
+    title: "Let the Poor Breathe", 
+    tag: "Drama · 2025", 
+    thumb: "/let-the-poor-breathe2-thumb.jpg", 
+    link: "https://youtu.be/-5R9lSFJlbw" 
+  },
+  { 
+    title: "Not My Valentine", 
+    tag: "RomCom · 2025", 
+    thumb: "/Not_My_Valentine.jpg", 
+    link: "https://youtu.be/gH58R5SNlm8" 
+  },
+  { 
+    title: "Anonymous", 
+    tag: "Musical · 2026", 
+    thumb: "/ANONYMOUS_FA_LS.jpg", 
+    link: "https://youtu.be/QxxEsZMTxRE" 
+  },
 ];
 
 function Films() {
@@ -126,13 +162,25 @@ function Films() {
     <Section id="films" className="bg-gray-50">
       <div className="flex items-end justify-between gap-4">
         <h2 className="text-3xl font-bold tracking-tight">Featured films</h2>
-        <a href="#" className="text-sm text-red-600 hover:text-red-700">View all on YouTube →</a>
+        <a href="https://www.youtube.com/@fuminglyonnetwork" target="_blank" rel="noopener noreferrer" className="text-sm text-red-600 hover:text-red-700">
+          View all on YouTube →
+        </a>
       </div>
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {sampleFilms.map((f) => (
-          <a key={f.title} href={f.link} className="group rounded-2xl overflow-hidden ring-1 ring-gray-200 bg-white hover:shadow-md transition">
+          <a 
+            key={f.title} 
+            href={f.link} 
+            target="_blank"                // 👈 opens in a new tab
+            rel="noopener noreferrer"     // 👈 security best practice
+            className="group rounded-2xl overflow-hidden ring-1 ring-gray-200 bg-white hover:shadow-md transition"
+          >
             <div className="aspect-video overflow-hidden">
-              <img src={f.thumb} alt={f.title} className="h-full w-full object-cover group-hover:scale-105 transition" />
+              <img 
+                src={f.thumb} 
+                alt={f.title} 
+                className="h-full w-full object-cover group-hover:scale-105 transition" 
+              />
             </div>
             <div className="p-4">
               <div className="font-semibold">{f.title}</div>
@@ -189,14 +237,14 @@ function Testimonials() {
 }
 
 function Contact() {
-  const [sent, setSent] = useState(false);
-  const onSubmit = (e) => { e.preventDefault(); setSent(true); };
   return (
     <Section id="contact">
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">Let’s build something legendary</h2>
-          <p className="mt-4 text-gray-600">Tell us about your project, collab idea, or casting request. We reply within 48 hours.</p>
+          <p className="mt-4 text-gray-600">
+            Tell us about your project, collab idea, or casting request. We reply within 48 hours.
+          </p>
           <div className="mt-6 text-sm text-gray-700">
             <p>📍 Dublin · Lagos · Toronto</p>
             <p className="mt-1">📧 hello@fuminglyonnetwork.com</p>
@@ -204,19 +252,47 @@ function Contact() {
             <p className="mt-1">📸 IG: @fuminglyonnetwork</p>
           </div>
         </div>
-        <form onSubmit={onSubmit} className="rounded-2xl border bg-white p-6 shadow-sm">
+
+        {/* ✅ Formspree form starts here */}
+        <form 
+          action="https://formspree.io/f/xqadogrr" 
+          method="POST" 
+          className="rounded-2xl border bg-white p-6 shadow-sm"
+        >
           <label className="block text-sm font-medium">Name</label>
-          <input required className="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Your name" />
+          <input 
+            type="text"
+            name="name" 
+            required 
+            className="mt-1 w-full rounded-lg border px-3 py-2" 
+            placeholder="Your name" 
+          />
 
           <label className="mt-4 block text-sm font-medium">Email</label>
-          <input type="email" required className="mt-1 w-full rounded-lg border px-3 py-2" placeholder="you@example.com" />
+          <input 
+            type="email"
+            name="email" 
+            required 
+            className="mt-1 w-full rounded-lg border px-3 py-2" 
+            placeholder="you@example.com" 
+          />
 
           <label className="mt-4 block text-sm font-medium">Message</label>
-          <textarea required className="mt-1 w-full rounded-lg border px-3 py-2 h-28" placeholder="Tell us about your project…" />
+          <textarea 
+            name="message" 
+            required 
+            className="mt-1 w-full rounded-lg border px-3 py-2 h-28" 
+            placeholder="Tell us about your project…" 
+          />
 
-          <button className="mt-4 w-full rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700">Send</button>
-          {sent && <p className="mt-3 text-sm text-green-700">Thanks! This demo form doesn’t send email here, but we’ll wire it to your inbox on deployment.</p>}
+          <button 
+            type="submit" 
+            className="mt-4 w-full rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+          >
+            Send
+          </button>
         </form>
+        {/* ✅ Formspree form ends here */}
       </div>
     </Section>
   );
