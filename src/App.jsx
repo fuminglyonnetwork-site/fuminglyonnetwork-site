@@ -129,7 +129,7 @@ function About() {
           </ul>
         </div>
         <div className="rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-sm">
-          <img src="/founder.jpg" alt="Funmilayo Priscilla Fadele - Founder" className="h-full w-full object-cover" />
+          <img src="/me.jpg" alt="Funmilayo Priscilla Fadele - Founder" className="h-full w-full object-cover" />
         </div>
       </div>
     </Section>
