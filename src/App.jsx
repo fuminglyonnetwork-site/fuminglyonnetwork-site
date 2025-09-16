@@ -94,7 +94,7 @@ function Hero() {
             <img 
               src="/fuminglyon_logo.jpeg"   // 👈 Put your logo inside /public/logo.png
               alt="FumingLyon Network Logo"
-              className="mx-auto mb-4 h-20 w-auto"
+              className="mx-auto mb-4 h-40 w-auto"
             />
             <div className="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-gray-200 shadow-sm">
               <iframe
