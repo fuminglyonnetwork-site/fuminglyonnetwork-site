@@ -85,7 +85,7 @@ function Hero() {
               </a>
             </div>
             <p className="mt-4 text-sm text-gray-500">
-              Now streaming: <span className="font-medium">“Let the Poor Breathe”</span> on YouTube.
+              Now streaming: <span className="font-medium">“Anonymous”</span> on YouTube.
             </p>
           </div>
 
@@ -247,9 +247,40 @@ function Contact() {
           </p>
           <div className="mt-6 text-sm text-gray-700">
             <p>📍 Dublin · Lagos · Toronto</p>
-            <p className="mt-1">📧 hello@fuminglyonnetwork.com</p>
-            <p className="mt-1">▶️ YouTube: FumingLyon Network</p>
-            <p className="mt-1">📸 IG: @fuminglyonnetwork</p>
+
+            <p className="mt-1">
+              📧{" "}
+              <a
+                href="mailto:funmilayo@fuminglyonnetwork.com"
+                className="text-blue-600 hover:underline"
+              >
+                funmilayo@fuminglyonnetwork.com
+              </a>
+            </p>
+
+            <p className="mt-1">
+              ▶️ YouTube:{" "}
+              <a
+                href="https://www.youtube.com/@fuminglyonnetwork"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-600 hover:underline"
+              >
+                FumingLyon Network
+              </a>
+            </p>
+
+            <p className="mt-1">
+              📸 IG:{" "}
+              <a
+                href="https://www.instagram.com/fuminglyonnetwork"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-600 hover:underline"
+              >
+                @fuminglyonnetwork
+              </a>
+            </p>
           </div>
         </div>
 
